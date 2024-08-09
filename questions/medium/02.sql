@@ -9,4 +9,3 @@ SELECT first_name
 FROM patients
 GROUP BY first_name
 HAVING count(first_name) = 1;
-
