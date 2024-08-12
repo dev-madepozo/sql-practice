@@ -78,3 +78,12 @@ CREATE TABLE employees(
   PRIMARY KEY (employee_id),
   FOREIGN KEY (reports_to) REFERENCES employees(employee_id)
 );
+
+DROP TABLE IF EXISTS employee_territories
+
+CREATE TABLE employee_territories(
+  employee_id INT NOT NULL,
+  territory_id CHAR(5) NOT NULL,
+  FOREIGN KEY (employee_id) REFERENCES employees(employee_id),
+  FOREIGN KEY (territory_id) REFERENCES territories(territory_id)
+);
