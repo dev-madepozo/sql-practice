@@ -20,13 +20,13 @@ CREATE TABLE customers(
   customer_name VARCHAR(50) NOT NULL,
   contact_name VARCHAR(50) NOT NULL,
   contact_title VARCHAR(50) NOT NULL,
-  address VARCHAR(50) NOT NULL,
-  city VARCHAR(25) NOT NULL,
-  region VARCHAR(25) NOT NULL,
-  postal_code VARCHAR(10) NOT NULL,
-  country VARCHAR(25) NOT NULL,
-  phone VARCHAR(25) NOT NULL,
-  fax VARCHAR(25) NOT NULL,
+  address VARCHAR(50) NULL,
+  city VARCHAR(25) NULL,
+  region VARCHAR(25) NULL,
+  postal_code VARCHAR(10) NULL,
+  country VARCHAR(25) NULL,
+  phone VARCHAR(25) NULL,
+  fax VARCHAR(25) NULL,
   PRIMARY KEY (customer_id)
 );
 
