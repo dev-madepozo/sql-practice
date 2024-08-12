@@ -1,5 +1,5 @@
 INSERT INTO customers (
-  customer_id, customer_name, contact_name, contact_title, address, city, region, postal_code, country, phone, fax
+  customer_id, company_name, contact_name, contact_title, address, city, region, postal_code, country, phone, fax
 )
 VALUES
   ("ALFKI","Alfreds Futterkiste","Maria Anders","Sales Representative","Obere Str. 57","Berlin","Western Europe","12209","Germany","030-0074321","030-0076545"),

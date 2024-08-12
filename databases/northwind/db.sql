@@ -17,7 +17,7 @@ DROP TABLE IF EXISTS customers;
 
 CREATE TABLE customers(
   customer_id VARCHAR(5) NOT NULL,
-  customer_name VARCHAR(50) NOT NULL,
+  company_name VARCHAR(50) NOT NULL,
   contact_name VARCHAR(50) NOT NULL,
   contact_title VARCHAR(50) NOT NULL,
   address VARCHAR(50) NULL,
