@@ -79,11 +79,34 @@ CREATE TABLE employees(
   FOREIGN KEY (reports_to) REFERENCES employees(employee_id)
 );
 
-DROP TABLE IF EXISTS employee_territories
+DROP TABLE IF EXISTS employee_territories;
 
 CREATE TABLE employee_territories(
   employee_id INT NOT NULL,
   territory_id CHAR(5) NOT NULL,
   FOREIGN KEY (employee_id) REFERENCES employees(employee_id),
   FOREIGN KEY (territory_id) REFERENCES territories(territory_id)
+);
+
+DROP TABLE IF EXISTS orders;
+
+CREATE TABLE orders(
+  order_id INT NOT NULL AUTO_INCREMENT,
+  customer_id VARCHAR(5) NOT NULL,
+  employee_id INT NOT NULL,
+  order_date DATE NOT NULL,
+  required_date DATE NOT NULL,
+  shipped_date DATE NULL,
+  ship_via INT NOT NULL,
+  freight DECIMAL(10,2) NOT NULL,
+  ship_name VARCHAR(50) NOT NULL,
+  ship_address VARCHAR(50) NOT NULL,
+  ship_city VARCHAR(25) NOT NULL,
+  ship_region VARCHAR(15) NULL,
+  ship_postal_code VARCHAR(10) NULL,
+  ship_country VARCHAR(25) NOT NULL,
+  PRIMARY KEY (order_id),
+  FOREIGN KEY (customer_id) REFERENCES customers(customer_id),
+  FOREIGN KEY (employee_id) REFERENCES employees(employee_id),
+  FOREIGN KEY (ship_via) REFERENCES shippers(shipper_id)
 );
