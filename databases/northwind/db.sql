@@ -30,10 +30,20 @@ CREATE TABLE customers(
   PRIMARY KEY (customer_id)
 );
 
-DROP TABLE IF EXISTS customers;
+DROP TABLE IF EXISTS regions;
 
 CREATE TABLE regions(
   region_id INT NOT NULL AUTO_INCREMENT,
   region_description VARCHAR(30) NOT NULL,
   PRIMARY KEY (region_id)
+);
+
+DROP TABLE IF EXISTS territories;
+
+CREATE TABLE territories(
+  territory_id CHAR(5) NOT NULL,
+  territory_description VARCHAR(30) NOT NULL,
+  region_id INT NOT NULL,
+  PRIMARY KEY (territory_id),
+  FOREIGN KEY (region_id) REFERENCES regions(region_id)
 );
