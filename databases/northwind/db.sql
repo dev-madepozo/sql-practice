@@ -110,3 +110,21 @@ CREATE TABLE orders(
   FOREIGN KEY (employee_id) REFERENCES employees(employee_id),
   FOREIGN KEY (ship_via) REFERENCES shippers(shipper_id)
 );
+
+DROP TABLE IF EXISTS suppliers;
+
+CREATE TABLE suppliers(
+  supplier_id VARCHAR(5) NOT NULL,
+  company_name VARCHAR(50) NOT NULL,
+  contact_name VARCHAR(50) NOT NULL,
+  contact_title VARCHAR(50) NOT NULL,
+  address VARCHAR(50) NULL,
+  city VARCHAR(25) NULL,
+  region VARCHAR(25) NULL,
+  postal_code VARCHAR(10) NULL,
+  country VARCHAR(25) NULL,
+  phone VARCHAR(25) NULL,
+  fax VARCHAR(25) NULL,
+  home_page VARCHAR(100) NULL,
+  PRIMARY KEY (supplier_id)
+);
