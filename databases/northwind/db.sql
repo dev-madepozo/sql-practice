@@ -47,3 +47,12 @@ CREATE TABLE territories(
   PRIMARY KEY (territory_id),
   FOREIGN KEY (region_id) REFERENCES regions(region_id)
 );
+
+DROP TABLE IF EXISTS shippers;
+
+CREATE TABLE shippers(
+  shipper_id INT NOT NULL AUTO_INCREMENT,
+  company_name VARCHAR(30) NOT NULL,
+  phone VARCHAR(20) NOT NULL,
+  PRIMARY KEY (shipper_id)
+);
