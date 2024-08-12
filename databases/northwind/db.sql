@@ -56,3 +56,25 @@ CREATE TABLE shippers(
   phone VARCHAR(20) NOT NULL,
   PRIMARY KEY (shipper_id)
 );
+
+DROP TABLE IF EXISTS employees;
+
+CREATE TABLE employees(
+  employee_id INT NOT NULL AUTO_INCREMENT,
+  first_name VARCHAR(30) NOT NULL,
+  last_name VARCHAR(30) NOT NULL,
+  title VARCHAR(30) NOT NULL,
+  title_of_courtesy VARCHAR(5) NOT NULL,
+  birth_date DATE NOT NULL,
+  hire_date DATE NOT NULL,
+  address VARCHAR(50) NOT NULL,
+  city VARCHAR(25) NOT NULL,
+  region VARCHAR(25) NOT NULL,
+  postal_code VARCHAR(10) NOT NULL,
+  country VARCHAR(25) NOT NULL,
+  phone VARCHAR(25) NOT NULL,
+  extension VARCHAR(10) NOT NULL,
+  reports_to INT NULL,
+  PRIMARY KEY (employee_id),
+  FOREIGN KEY (reports_to) REFERENCES employees(employee_id)
+);
