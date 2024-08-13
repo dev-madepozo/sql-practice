@@ -22,7 +22,7 @@ Open the terminal and go to the root directory of this repository, then run the 
 
 #### First we need to connect to mysql
   ```bash
-  $ mysql -u root -p
+  mysql -u root -p
   ```
 
   #### Execute the scripts
@@ -30,34 +30,36 @@ Open the terminal and go to the root directory of this repository, then run the 
   - Run this command to create the `hospital` database
 
   ```sql
-  mysql> source ./databases/hospital/db.sql
+  source ./databases/hospital/db.sql
   ```
 
   - Once you've created the database, now run these commands to insert data for each table **[make sure to do it in the same order]**;
 
   ```sql
-  mysql> source ./databases/hospital/doctors.sql
-  mysql> source ./databases/hospital/province_names.sql
-  mysql> source ./databases/hospital/patients.sql
-  mysql> source ./databases/hospital/admissions.sql
+  source ./databases/hospital/doctors.sql
+  source ./databases/hospital/province_names.sql
+  source ./databases/hospital/patients.sql
+  source ./databases/hospital/admissions.sql
   ```
 
   - Do the same to create the `northwind` database.
 
   ```sql
-  mysql> source ./databases/northwind/db.sql
+  source ./databases/northwind/db.sql
+  ```
 
-  mysql> source ./databases/northwind/categories.sql
-  mysql> source ./databases/northwind/customers.sql
-  mysql> source ./databases/northwind/products.sql
-  mysql> source ./databases/northwind/regions.sql
-  mysql> source ./databases/northwind/territories.sql
-  mysql> source ./databases/northwind/shippers.sql
-  mysql> source ./databases/northwind/employees.sql
-  mysql> source ./databases/northwind/employee_territories.sql
-  mysql> source ./databases/northwind/orders.sql
-  mysql> source ./databases/northwind/suppliers.sql
-  mysql> source ./databases/northwind/order_details.sql
+  ```sql
+  source ./databases/northwind/categories.sql
+  source ./databases/northwind/customers.sql
+  source ./databases/northwind/suppliers.sql
+  source ./databases/northwind/products.sql
+  source ./databases/northwind/regions.sql
+  source ./databases/northwind/territories.sql
+  source ./databases/northwind/shippers.sql
+  source ./databases/northwind/employees.sql
+  source ./databases/northwind/employee_territories.sql
+  source ./databases/northwind/orders.sql
+  source ./databases/northwind/order_details.sql
   ```
 
 ### Congratulations!

@@ -30,6 +30,42 @@ CREATE TABLE customers(
   PRIMARY KEY (customer_id)
 );
 
+DROP TABLE IF EXISTS suppliers;
+
+CREATE TABLE suppliers(
+  supplier_id INT NOT NULL AUTO_INCREMENT,
+  company_name VARCHAR(50) NOT NULL,
+  contact_name VARCHAR(50) NOT NULL,
+  contact_title VARCHAR(50) NOT NULL,
+  address VARCHAR(50) NULL,
+  city VARCHAR(25) NULL,
+  region VARCHAR(25) NULL,
+  postal_code VARCHAR(10) NULL,
+  country VARCHAR(25) NULL,
+  phone VARCHAR(25) NULL,
+  fax VARCHAR(25) NULL,
+  home_page VARCHAR(100) NULL,
+  PRIMARY KEY (supplier_id)
+);
+
+DROP TABLE IF EXISTS products;
+
+CREATE TABLE products(
+  product_id INT NOT NULL AUTO_INCREMENT,
+  product_name VARCHAR(50) NOT NULL,
+  supplier_id INT NOT NULL,
+  category_id INT NOT NULL,
+  quantity_per_unit VARCHAR(25) NOT NULL,
+  unit_price DECIMAL(10, 2) NOT NULL,
+  units_in_stock INT NOT NULL DEFAULT 0,
+  units_on_order INT NOT NULL DEFAULT 0,
+  reorder_level INT NOT NULL DEFAULT 0,
+  discontinued INT NOT NULL DEFAULT 0,
+  PRIMARY KEY (product_id),
+  FOREIGN KEY (supplier_id) REFERENCES suppliers(supplier_id),
+  FOREIGN KEY (category_id) REFERENCES categories(category_id)
+);
+
 DROP TABLE IF EXISTS regions;
 
 CREATE TABLE regions(
@@ -109,42 +145,6 @@ CREATE TABLE orders(
   FOREIGN KEY (customer_id) REFERENCES customers(customer_id),
   FOREIGN KEY (employee_id) REFERENCES employees(employee_id),
   FOREIGN KEY (ship_via) REFERENCES shippers(shipper_id)
-);
-
-DROP TABLE IF EXISTS suppliers;
-
-CREATE TABLE suppliers(
-  supplier_id INT NOT NULL AUTO_INCREMENT,
-  company_name VARCHAR(50) NOT NULL,
-  contact_name VARCHAR(50) NOT NULL,
-  contact_title VARCHAR(50) NOT NULL,
-  address VARCHAR(50) NULL,
-  city VARCHAR(25) NULL,
-  region VARCHAR(25) NULL,
-  postal_code VARCHAR(10) NULL,
-  country VARCHAR(25) NULL,
-  phone VARCHAR(25) NULL,
-  fax VARCHAR(25) NULL,
-  home_page VARCHAR(100) NULL,
-  PRIMARY KEY (supplier_id)
-);
-
-DROP TABLE IF EXISTS products;
-
-CREATE TABLE products(
-  product_id INT NOT NULL AUTO_INCREMENT,
-  product_name VARCHAR(50) NOT NULL,
-  supplier_id INT NOT NULL,
-  category_id INT NOT NULL,
-  quantity_per_unit VARCHAR(25) NOT NULL,
-  unit_price DECIMAL(10, 2) NOT NULL,
-  units_in_stock INT NOT NULL DEFAULT 0,
-  units_on_order INT NOT NULL DEFAULT 0,
-  reorder_level INT NOT NULL DEFAULT 0,
-  discontinued INT NOT NULL DEFAULT 0,
-  PRIMARY KEY (product_id),
-  FOREIGN KEY (supplier_id) REFERENCES suppliers(supplier_id),
-  FOREIGN KEY (category_id) REFERENCES categories(category_id)
 );
 
 DROP TABLE IF EXISTS order_details;
