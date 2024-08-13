@@ -146,3 +146,14 @@ CREATE TABLE products(
   FOREIGN KEY (supplier_id) REFERENCES suppliers(supplier_id),
   FOREIGN KEY (category_id) REFERENCES categories(category_id)
 );
+
+DROP TABLE IF EXISTS order_details;
+
+CREATE TABLE order_details(
+  order_id INT NOT NULL,
+  product_id INT NOT NULL,
+  quantity INT NOT NULL,
+  discount DECIMAL(10,2) DEFAULT 0,
+  FOREIGN KEY (order_id) REFERENCES orders(order_id),
+  FOREIGN KEY (product_id) REFERENCES products(product_id)
+);
