@@ -6,8 +6,7 @@
 
 SELECT
   first_name, last_name, max(hire_date) AS hire_date
-FROM employees
-GROUP BY first_name, last_name;
+FROM employees;
 
 /*
 SELECT
