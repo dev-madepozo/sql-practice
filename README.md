@@ -1,12 +1,21 @@
 # SQL-Practice
 
-- In this repository, you will find the solution for all the exercises on the [sql-practice](https://www.sql-practice.com/) page.
+In this repository, you will find the solution for all the exercises on the [sql-practice](https://www.sql-practice.com/) page.
 
-- In case you want to practice on your local machine, I created the scripts to create both databases with their tables and populate them with the data used by the website. Then you will get the same result when you run your solutions.
+## Table of Contents
 
-- __Note__: These solutions were written and tested in a MySQL engine.
+1. [Getting started](#getting-started)
+2. [Folder Structure](#folder-structure)
+3. [How to use](#how-to-use)
+4. [Congratulations](#congratulations)
 
-## Folder structure
+## Getting Started
+
+In case you want to practice on your local machine, I created the scripts to create both databases with their tables and populate them with the data used by the website. Then you will get the same result when you run your solutions.
+
+__Note__: These solutions were written and tested in a MySQL engine.
+
+## Folder Structure
 
 ##### Databases
 
@@ -21,34 +30,33 @@
 Open the terminal and go to the root directory of this repository, then run the following commands to have your database ready to practice on your local.
 
 #### First we need to connect to mysql
-  ```bash
+  ```console
   mysql -u root -p
   ```
 
   #### Execute the scripts
 
-  - Run this command to create the `hospital` database
-
-  ```sql
+  Run this command to create the `hospital` database
+  ```console
   source ./databases/hospital/db.sql
   ```
 
-  - Once you've created the database, now run these commands to insert data for each table **[make sure to do it in the same order]**;
+  Once you've created the database, now run these commands to insert data for each table **[make sure to do it in the same order]**;
 
-  ```sql
+  ```console
   source ./databases/hospital/doctors.sql
   source ./databases/hospital/province_names.sql
   source ./databases/hospital/patients.sql
   source ./databases/hospital/admissions.sql
   ```
 
-  - Do the same to create the `northwind` database.
+  Do the same to create the `northwind` database.
 
-  ```sql
+  ```console
   source ./databases/northwind/db.sql
   ```
 
-  ```sql
+  ```console
   source ./databases/northwind/categories.sql
   source ./databases/northwind/customers.sql
   source ./databases/northwind/suppliers.sql
