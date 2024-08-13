@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS hospital;
+DROP DATABASE IF EXISTS hospital;
 
 CREATE DATABASE hospital;
 

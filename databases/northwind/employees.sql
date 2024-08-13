@@ -15,8 +15,8 @@ VALUES
 
 
 /*
-  To set the reports_to value, first we should to create the employee to know their employe_id
-  Now we have all employees created, we update the reports_to column with the folowwing queries
+  To set the reports_to value, we should to create the employees first to know their employee_ids
+  Now we have created all employees, we update the reports_to column with the folowwing queries.
 */
 
 UPDATE employees SET reports_to = 2 WHERE employee_id IN (1, 3,4, 5, 8);
