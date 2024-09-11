@@ -1,10 +1,23 @@
-DROP TABLE IF EXISTS northwind;
+-- Create the database
+CREATE DATABASE IF NOT EXISTS northwind;
 
-CREATE DATABASE northwind;
-
+-- Switch to the northwind database
 USE northwind;
 
+-- Drop existing tables
 DROP TABLE IF EXISTS categories;
+DROP TABLE IF EXISTS customers;
+DROP TABLE IF EXISTS suppliers;
+DROP TABLE IF EXISTS products;
+DROP TABLE IF EXISTS regions;
+DROP TABLE IF EXISTS territories;
+DROP TABLE IF EXISTS shippers;
+DROP TABLE IF EXISTS employees;
+DROP TABLE IF EXISTS employee_territories;
+DROP TABLE IF EXISTS orders;
+DROP TABLE IF EXISTS order_details;
+
+-- Create the tables
 
 CREATE TABLE categories(
   category_id INT NOT NULL,
@@ -12,8 +25,6 @@ CREATE TABLE categories(
   description VARCHAR(100) NOT NULL,
   PRIMARY KEY (category_id)
 );
-
-DROP TABLE IF EXISTS customers;
 
 CREATE TABLE customers(
   customer_id VARCHAR(5) NOT NULL,
@@ -29,8 +40,6 @@ CREATE TABLE customers(
   fax VARCHAR(25) NULL,
   PRIMARY KEY (customer_id)
 );
-
-DROP TABLE IF EXISTS suppliers;
 
 CREATE TABLE suppliers(
   supplier_id INT NOT NULL AUTO_INCREMENT,
@@ -48,8 +57,6 @@ CREATE TABLE suppliers(
   PRIMARY KEY (supplier_id)
 );
 
-DROP TABLE IF EXISTS products;
-
 CREATE TABLE products(
   product_id INT NOT NULL AUTO_INCREMENT,
   product_name VARCHAR(50) NOT NULL,
@@ -66,15 +73,11 @@ CREATE TABLE products(
   FOREIGN KEY (category_id) REFERENCES categories(category_id)
 );
 
-DROP TABLE IF EXISTS regions;
-
 CREATE TABLE regions(
   region_id INT NOT NULL AUTO_INCREMENT,
   region_description VARCHAR(30) NOT NULL,
   PRIMARY KEY (region_id)
 );
-
-DROP TABLE IF EXISTS territories;
 
 CREATE TABLE territories(
   territory_id CHAR(5) NOT NULL,
@@ -84,16 +87,12 @@ CREATE TABLE territories(
   FOREIGN KEY (region_id) REFERENCES regions(region_id)
 );
 
-DROP TABLE IF EXISTS shippers;
-
 CREATE TABLE shippers(
   shipper_id INT NOT NULL AUTO_INCREMENT,
   company_name VARCHAR(30) NOT NULL,
   phone VARCHAR(20) NOT NULL,
   PRIMARY KEY (shipper_id)
 );
-
-DROP TABLE IF EXISTS employees;
 
 CREATE TABLE employees(
   employee_id INT NOT NULL AUTO_INCREMENT,
@@ -115,16 +114,12 @@ CREATE TABLE employees(
   FOREIGN KEY (reports_to) REFERENCES employees(employee_id)
 );
 
-DROP TABLE IF EXISTS employee_territories;
-
 CREATE TABLE employee_territories(
   employee_id INT NOT NULL,
   territory_id CHAR(5) NOT NULL,
   FOREIGN KEY (employee_id) REFERENCES employees(employee_id),
   FOREIGN KEY (territory_id) REFERENCES territories(territory_id)
 );
-
-DROP TABLE IF EXISTS orders;
 
 CREATE TABLE orders(
   order_id INT NOT NULL AUTO_INCREMENT,
@@ -147,8 +142,6 @@ CREATE TABLE orders(
   FOREIGN KEY (ship_via) REFERENCES shippers(shipper_id)
 );
 
-DROP TABLE IF EXISTS order_details;
-
 CREATE TABLE order_details(
   order_id INT NOT NULL,
   product_id INT NOT NULL,
@@ -157,3 +150,8 @@ CREATE TABLE order_details(
   FOREIGN KEY (order_id) REFERENCES orders(order_id),
   FOREIGN KEY (product_id) REFERENCES products(product_id)
 );
+
+-- Insert data
+
+INSERT INTO categories(category_id, category_name, description) VALUES (1,"Beverages","Soft drinks, coffees, teas, beers, and ales"),(2,"Condiments","Sweet and savory sauces, relishes, spreads, and seasonings"),(3,"Confections","Desserts, candies, and sweet breads"),(4,"Dairy Products","Cheeses"),(5,"Grains/Cereals","Breads, crackers, pasta, and cereal"),(6,"Meat/Poultry","Prepared meats"),(7,"Produce","Dried fruit and bean curd"),(8,"Seafood","Seaweed and fish");
+
