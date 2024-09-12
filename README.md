@@ -47,20 +47,6 @@ Open the terminal and go to the root directory of this repository, then run the 
   SET autocommit=0; source ./databases/northwind/schema.sql; COMMIT;
   ```
 
-  ```console
-  source ./databases/northwind/categories.sql
-  source ./databases/northwind/customers.sql
-  source ./databases/northwind/suppliers.sql
-  source ./databases/northwind/products.sql
-  source ./databases/northwind/regions.sql
-  source ./databases/northwind/territories.sql
-  source ./databases/northwind/shippers.sql
-  source ./databases/northwind/employees.sql
-  source ./databases/northwind/employee_territories.sql
-  source ./databases/northwind/orders.sql
-  source ./databases/northwind/order_details.sql
-  ```
-
 ### Congratulations!
 
 You're ready to practice on your own computer, I hope you enjoy learning SQL like I did, and feel free to reach out in case you need help or want to contribute to this repository.
