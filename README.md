@@ -38,22 +38,13 @@ Open the terminal and go to the root directory of this repository, then run the 
 
   Run this command to create the `hospital` database
   ```console
-  source ./databases/hospital/db.sql
-  ```
-
-  Once you've created the database, now run these commands to insert data for each table **[make sure to do it in the same order]**;
-
-  ```console
-  source ./databases/hospital/doctors.sql
-  source ./databases/hospital/province_names.sql
-  source ./databases/hospital/patients.sql
-  source ./databases/hospital/admissions.sql
+  SET autocommit=0; source ./databases/hospital/schema.sql; COMMIT;
   ```
 
   Do the same to create the `northwind` database.
 
   ```console
-  source ./databases/northwind/db.sql
+  SET autocommit=0; source ./databases/northwind/schema.sql; COMMIT;
   ```
 
   ```console
