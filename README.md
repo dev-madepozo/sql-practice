@@ -7,7 +7,9 @@ In this repository, you will find the solution for all the exercises on the [sql
 1. [Getting started](#getting-started)
 2. [Folder Structure](#folder-structure)
 3. [How to use](#how-to-use)
-4. [Congratulations](#congratulations)
+4. [How to contribue](#how-to-contribute)
+5. [Congratulations](#congratulations)
+6. [License](#license)
 
 ## Getting Started
 
@@ -29,12 +31,12 @@ __Note__: These solutions were written and tested in a MySQL engine.
 
 Open the terminal and go to the root directory of this repository, then run the following commands to have your database ready to practice on your local.
 
-#### First we need to connect to mysql
+  **First we need to connect to mysql**
   ```console
   mysql -u root -p
   ```
 
-  #### Execute the scripts
+  **Execute the scripts**
 
   Run this command to create the `hospital` database
   ```console
@@ -47,6 +49,14 @@ Open the terminal and go to the root directory of this repository, then run the 
   SET autocommit=0; source ./databases/northwind/schema.sql; COMMIT;
   ```
 
-### Congratulations!
+## How to contribute
+
+f you'd like to contribute to this repository, feel free to fork it and submit a pull request with your suggestions or improvements.
+
+## Congratulations!
 
 You're ready to practice on your own computer, I hope you enjoy learning SQL like I did, and feel free to reach out in case you need help or want to contribute to this repository.
+
+## License
+
+This repository is licensed under the MIT License.
